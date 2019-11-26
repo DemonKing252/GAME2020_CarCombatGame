@@ -76,7 +76,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\SDL2-2.0.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)\SDL2-2.0.8\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -115,6 +121,74 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AudioManager.h" />
+    <ClInclude Include="BGTile.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="FSM.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Hazard.h" />
+    <ClInclude Include="LabelText.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="PlayerStats.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Turret.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="XMLStuff\stdafx.h" />
+    <ClInclude Include="XMLStuff\tinyxml2.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AudioManager.cpp" />
+    <ClCompile Include="BGTile.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="FSM.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Hazard.cpp" />
+    <ClCompile Include="LabelText.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="PlayerStats.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Turret.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="XMLStuff\tinyxml2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Images\BrickWall.png" />
+    <Image Include="Assets\Images\Buttons.png" />
+    <Image Include="Assets\Images\EnemyTurrets.png" />
+    <Image Include="Assets\Images\ExplosionSprites.png" />
+    <Image Include="Assets\Images\Gravel.png" />
+    <Image Include="Assets\Images\Instructions.png" />
+    <Image Include="Assets\Images\Laser.png" />
+    <Image Include="Assets\Images\Laser2.png" />
+    <Image Include="Assets\Images\Lava.png" />
+    <Image Include="Assets\Images\Mine.png" />
+    <Image Include="Assets\Images\MineSpike.png" />
+    <Image Include="Assets\Images\Nature.png" />
+    <Image Include="Assets\Images\Rock.png" />
+    <Image Include="Assets\Images\Spike.png" />
+    <Image Include="Assets\Images\Tank.png" />
+    <Image Include="Assets\Images\TankSprites.png" />
+    <Image Include="Assets\Images\tile.png" />
+    <Image Include="Assets\Images\Water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="GameData.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Level.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
